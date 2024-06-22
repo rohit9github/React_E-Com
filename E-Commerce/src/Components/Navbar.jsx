@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -5,11 +6,15 @@ const Navbar = () => {
             <header className="bg-violet-600">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex justify-between items-center">
-                        <h2 className="text-3xl font-medium text-white">E-cart</h2>
+                        <h2 className="text-3xl font-medium text-white">
+                            <Link to={"/"}>E-Cart</Link>
+                        </h2>
                         <div>
                             <input type="text" placeholder="Search Your Item" className="pe-28 ps-4 text-start inline-block" />
                         </div>
-                        <div className="text-white text-2xl font-medium">CART</div>
+                        <div className="text-white text-2xl font-medium">
+                            <Link to={"/cart"}>Cart</Link>
+                        </div>
                     </div>
                     <nav>
                         <ul className="flex justify-between items-center">
