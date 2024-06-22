@@ -5,7 +5,7 @@ import Products from "./Products";
 
 
 
-const SearchItem = () => {
+const SearchItem = ({cart,setCart}) => {
 
     let [product, setProduct] = useState([])
 
@@ -26,7 +26,7 @@ const SearchItem = () => {
 
     return (
         <>
-            <Products product={filterData} />
+            <Products cart={cart} setCart={setCart} product={filterData} />
         </>
     )
 }

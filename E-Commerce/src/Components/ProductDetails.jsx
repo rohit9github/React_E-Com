@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 
 
 
-const ProductDetails = () => {
+const ProductDetails = ({ cart, setCart }) => {
 
     const { id } = useParams()
 
@@ -26,7 +26,7 @@ const ProductDetails = () => {
     useEffect(() => {
         getRelated();
         getProductDetail();
-    }, [details,realted]);
+    }, [details, realted]);
 
 
     return (
@@ -74,7 +74,6 @@ const ProductDetails = () => {
                             )
                         })
                     }
-
                 </div>
             </div>
         </>

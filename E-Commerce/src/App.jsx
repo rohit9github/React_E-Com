@@ -11,7 +11,8 @@ import axios from 'axios'
 function App() {
 
   let [product, setProduct] = useState([]);
-  let [filtered, setFiltered] = useState([])
+  let [filtered, setFiltered] = useState([]);
+  let [cart,setCart] =  useState([])
 
 
   let getProducts = () => {
@@ -41,12 +42,12 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar filteredByCategory={filteredByCategory} />
+        <Navbar cart={cart} filteredByCategory={filteredByCategory} />
         <Routes>
-          <Route path='/' element={<Products product={filtered} />} />
+          <Route path='/' element={<Products cart={cart} setCart={setCart} product={filtered} />} />
           <Route path='/details/:id' element={<ProductDetails />} />
           <Route path='/search/:term' element={<SearchItem />} />
-          <Route path='/cart' element={<Cart />} />
+          <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
         </Routes>
       </BrowserRouter>
     </>
