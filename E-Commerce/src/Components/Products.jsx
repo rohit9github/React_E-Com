@@ -1,28 +1,13 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
+
 import { Link } from "react-router-dom"
 
 
-const Products = () => {
-
-    let [products, setProducts] = useState([])
-
-    useEffect(() => {
-        const getProducts = () => {
-            axios.get("http://localhost:3000/product")
-                .then((res) => {
-                    setProducts(res.data)
-                })
-        }
-        getProducts()
-    }, [])
-    console.log(products);
-
+const Products = ({ product }) => {
     return (
         <>
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-wrap">
-                    {products.map((v,i) => {
+                    {product.map((v,i) => {
                         return (
                             <>
                                 <div className="w-1/4" key={i}>

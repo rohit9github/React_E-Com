@@ -1,6 +1,17 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ filteredByCategory }) => {
+
+    let [search,setSearch] =  useState('');
+
+    let navigate = useNavigate()
+
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        navigate(`/search/${search}`);
+    }
+
     return (
         <>
             <header className="bg-violet-600">
@@ -10,7 +21,9 @@ const Navbar = () => {
                             <Link to={"/"}>E-Cart</Link>
                         </h2>
                         <div>
-                            <input type="text" placeholder="Search Your Item" className="pe-28 ps-4 text-start inline-block" />
+                            <form onSubmit={(e)=>handleSubmit(e)}>
+                                <input type="text" value={search} placeholder="Search Your Item" className="pe-28 ps-4 text-start inline-block" onChange={(e)=>setSearch(e.target.value)} />
+                            </form>
                         </div>
                         <div className="text-white text-2xl font-medium">
                             <Link to={"/cart"}>Cart</Link>
@@ -19,13 +32,19 @@ const Navbar = () => {
                     <nav>
                         <ul className="flex justify-between items-center">
                             <li>
-                                <a href="" className="text-white text-2xl">Mobiles</a>
+                                <button type="button" className="text-white text-2xl" onClick={() => filteredByCategory("Mens")} >Men</button>
                             </li>
                             <li>
-                                <a href="" className="text-white text-2xl">Laptops</a>
+                                <button type="button" className="text-white text-2xl" onClick={() => filteredByCategory("Womens")}>Women</button>
                             </li>
                             <li>
-                                <a href="" className="text-white text-2xl">Tablates</a>
+                                <button type="button" className="text-white text-2xl" onClick={() => filteredByCategory("Electronics")}>Electronics</button>
+                            </li>
+                            <li>
+                                <button type="button" className="text-white text-2xl" onClick={() => filteredByCategory("Kids")} >Kids</button>
+                            </li>
+                            <li>
+                                <button type="button" className="text-white text-2xl" onClick={() => filteredByCategory('All')}>All</button>
                             </li>
                         </ul>
                     </nav>
@@ -35,4 +54,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default Navbar;      
