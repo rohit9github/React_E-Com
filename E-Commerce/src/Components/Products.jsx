@@ -30,18 +30,23 @@ const Products = ({ product, cart, setCart }) => {
                     {product.map((v, i) => {
                         return (
                             <>
-                                <div className="w-1/4" key={i}>
-                                    <div className="products-items my-4 ">
-                                        <Link to={`/details/${v.id}`}>
-                                            <img src={v.path} alt="" className="inline-block object-cover" />
-                                        </Link>
-                                        <div>
-                                            <h2>Title :- {v.title}</h2>
-                                            <h3>Brand :- {v.brand}</h3>
-                                            <h3>Category :- {v.category_name}</h3>
-                                            <span>Price :- {v.price}</span><br /><br />
-                                            <button className="bg-amber-500 text-white px-5 py-2 rounded-md" onClick={() => addToCart(v.id, v.path, v.price, v.category_name, v.brand, v.title)} >Add To Cart</button>
-                                            <button type="button" className="bg-orange-500 text-white px-5 py-2 rounded-md ms-4"  >Buy Now</button>
+                                <div className="w-1/3" key={i}>
+                                    <div className="products-items my-4 mx-3 p-2">
+                                        <div className="products-img text-center">
+                                            <Link to={`/details/${v.id}`}>
+                                                <img src={v.path} alt="" className="inline-block object-cover" />
+                                            </Link>
+                                        </div>
+                                        <div className="p-2">
+                                            <h2 className="overflow-hidden text-ellipsis whitespace-nowrap text-lg font-medium text-neutral-700">{v.title}</h2>
+                                            <h3 className="text-lg font-medium">{v.brand}</h3>
+                                            <h3 className="text-lg font-medium">{v.category_name}</h3>
+                                            <span className="text-lg font-medium text-slate-700">{v.price}</span>
+                                             <span className="text-base font-normal line-through ms-2 text-slate-500">{v.oprice}</span>
+                                            <div className="text-center mt-6 mb-2">
+                                                <button className="bg-amber-500 text-white px-5 py-2 rounded-md" onClick={() => addToCart(v.id, v.path, v.price, v.category_name, v.brand, v.title)} >Add To Cart</button>
+                                                <button type="button" className="bg-orange-500 text-white px-5 py-2 rounded-md ms-4"  >Buy Now</button>
+                                            </div>
                                         </div>
                                     </div>
 
