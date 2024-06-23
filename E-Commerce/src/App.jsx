@@ -45,7 +45,7 @@ function App() {
         <Navbar cart={cart} filteredByCategory={filteredByCategory} />
         <Routes>
           <Route path='/' element={<Products cart={cart} setCart={setCart} product={filtered} />} />
-          <Route path='/details/:id' element={<ProductDetails />} />
+          <Route path='/details/:id' element={<ProductDetails cart={cart} setCart={setCart} />} />
           <Route path='/search/:term' element={<SearchItem />} />
           <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
         </Routes>
