@@ -7,6 +7,8 @@ import SearchItem from './Components/SearchItem'
 import Cart from './Components/Cart'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import Login from './Components/Login'
+import Register from './Components/Register'
 
 function App() {
 
@@ -48,6 +50,8 @@ function App() {
           <Route path='/details/:id' element={<ProductDetails cart={cart} setCart={setCart} />} />
           <Route path='/search/:term' element={<SearchItem />} />
           <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
         </Routes>
       </BrowserRouter>
     </>
