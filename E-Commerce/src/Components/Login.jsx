@@ -14,7 +14,14 @@ const Login = () => {
 
     let handleSubmit = (e)=>{
         e.preventDefault();
-        console.log(loginUser);
+        const registerUser = JSON.parse(localStorage.getItem("user"));
+
+        if(loginUser.username === registerUser.username && loginUser.email === registerUser.email && loginUser.pass === registerUser.pass){
+            alert("Login Successfully");
+        }
+        else{
+            alert("Login Failed");
+        }
     }
 
     return (
