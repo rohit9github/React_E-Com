@@ -30,3 +30,6 @@
 .cart-items:hover{
     box-shadow: 10px 10px 20px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
+header form input {
+    background-color: #f0f5ff;
+}
