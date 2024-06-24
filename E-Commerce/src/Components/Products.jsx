@@ -44,8 +44,8 @@ const Products = ({ product, cart, setCart }) => {
                                             <span className="text-lg font-medium text-slate-700">{v.price}</span>
                                             <span className="text-base font-normal line-through ms-2 text-slate-500">{v.oprice}</span>
                                             <div className="text-center mt-6 mb-2">
-                                                <button className="bg-amber-500 text-white px-5 py-2 rounded-md" onClick={() => addToCart(v.id, v.path, v.price, v.category_name, v.brand, v.title, v.decs,v.rating)} >Add To Cart</button>
-                                                <button type="button" className="bg-orange-500 text-white px-5 py-2 rounded-md ms-4"  >Buy Now</button>
+                                                <button className="bg-amber-500 text-white font-medium text-lg px-5 py-2 rounded-md" onClick={() => addToCart(v.id, v.path, v.price, v.category_name, v.brand, v.title, v.decs,v.rating)} >Add To Cart</button>
+                                                <button type="button" className="bg-orange-500 text-white font-medium text-lg px-5 py-2 rounded-md ms-4"  >Buy Now</button>
                                             </div>
                                         </div>
                                     </div>

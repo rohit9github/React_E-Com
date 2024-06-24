@@ -85,8 +85,8 @@ const ProductDetails = ({ cart, setCart }) => {
                         <span className="text-base font-normal line-through ms-2 text-slate-500">{details.oprice}</span> <br />
                         <span className="text-xl font-medium text-slate-700 flex items-center">Rating :- {renderStars(details.rating)}</span>
                         <br /><br />
-                        <button className="bg-amber-500 text-white px-5 py-2 rounded-md" onClick={() => addToCart(details.id, details.path, details.price,details.decs, details.category_name, details.brand, details.title,details.decs,details.rating)}>Add To Cart</button>
-                        <button className="bg-orange-500 text-white px-5 py-2 rounded-md ms-4">Buy Now</button>
+                        <button className="bg-amber-500 text-white font-medium text-lg px-5 py-2 rounded-md" onClick={() => addToCart(details.id, details.path, details.price,details.decs, details.category_name, details.brand, details.title,details.decs,details.rating)}>Add To Cart</button>
+                        <button className="bg-orange-500 text-white font-medium text-lg px-5 py-2 rounded-md ms-4">Buy Now</button>
                     </div>
                 </div>
                 <h3 className="text-center text-4xl font-medium my-5">Related Products</h3>
@@ -113,8 +113,8 @@ const ProductDetails = ({ cart, setCart }) => {
                                                 <span className="text-lg font-medium text-slate-700">{v1.price}</span>
                                                 <span className="text-base font-normal line-through ms-2 text-slate-500">{v1.oprice}</span><br /><br />
                                                 <div className="text-center mt-6 mb-2">
-                                                    <button className="bg-amber-500 text-white px-5 py-2 rounded-md" onClick={() => addToCart(v1.id, v1.path, v1.price, v1.category_name, v1.brand, v1.title,v1.decs,v1.rating)}>Add To Cart</button>
-                                                    <button className="bg-orange-500 text-white px-5 py-2 rounded-md ms-4">Buy Now</button>
+                                                    <button className="bg-amber-500 text-white font-medium text-lg px-5 py-2 rounded-md" onClick={() => addToCart(v1.id, v1.path, v1.price, v1.category_name, v1.brand, v1.title,v1.decs,v1.rating)}>Add To Cart</button>
+                                                    <button className="bg-orange-500 text-white font-medium text-lg px-5 py-2 rounded-md ms-4">Buy Now</button>
                                                 </div>
                                             </div>
                                         </div>  
