@@ -1,5 +1,6 @@
 import { useState } from "react"
-
+import { ToastContainer,toast  } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
@@ -15,8 +16,11 @@ const Register = () => {
 
     let handleSubmit = (e) => {
         e.preventDefault()
-        localStorage.setItem("user",JSON.stringify(registerUser) );
+        let users = JSON.parse(localStorage.getItem("user")) || [];
+        users.push(registerUser);
+        localStorage.setItem("user",JSON.stringify(users));
         setRegisterUser({})
+        toast.success("Register SuccessFully")
     }
 
     return (
@@ -39,6 +43,7 @@ const Register = () => {
                     <button type="submit">Submit</button>
                 </form>
             </div>
+            <ToastContainer />
         </>
     )
 }

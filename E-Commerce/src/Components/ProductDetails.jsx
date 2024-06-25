@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 // import Products from "./Products";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,6 +14,7 @@ const ProductDetails = ({ cart, setCart }) => {
     let [details, setDetails] = useState({});
     let [product, setProduct] = useState([]);
     // let [related, setRelated] = useState([])
+    let navigate = useNavigate()
 
     const getProductDetail = () => {
         axios.get(`http://localhost:3000/product/${id}`)
@@ -28,22 +29,31 @@ const ProductDetails = ({ cart, setCart }) => {
             })
     }
 
+    const getUser = localStorage.getItem("user");
+
     const addToCart = (id, path, price, category_name, brand, title,decs,rating) => {
-        const obj = {
-            id, path, price, category_name, brand, title,decs,rating
+        if(getUser){
+            const obj = {
+                id, path, price, category_name, brand, title,decs,rating
+            }
+            setCart([...cart, obj])
+            console.log(cart);
+            toast.success("Added To Cart", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            })
         }
-        setCart([...cart, obj])
-        console.log(cart);
-        toast.success("Added To Cart", {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-        })
+        else{
+            alert("Please Login");
+            navigate("/login")
+        }
+        
     }
 
 
