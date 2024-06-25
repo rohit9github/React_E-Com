@@ -33,3 +33,9 @@
 header form input {
     background-color: #f0f5ff;
 }
+.linear-bg{
+    background: linear-gradient(150deg,#9967ee,#5aa3f4);
+}
+::placeholder{
+    color: white !important;
+}
