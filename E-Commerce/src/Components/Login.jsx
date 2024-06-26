@@ -35,18 +35,18 @@ const Login = () => {
 
     return (
         <>
-            <div className="linear-bg h-screen">
-            <h2 className="text-center text-5xl font-semibold">Login Form</h2>
-            <div className="max-w-4xl mx-auto px-4 border">
-                <div className="flex justify-center p-5">
-                    <form method="post" onSubmit={(e) => handleSubmit(e)}>
-                        <label className="text-xl font-medium mb-2 inline-block text-white">Enter Your Username :- </label>
-                        <input type="text" placeholder="Enter Your Username" className="inline-block w-full pr-6 border-white border-b-2 py-2 ps-4 text-lg outline-none bg-transparent " name="username" onChange={(e) => getInputValue(e)} /><br /><br />
-                        <label className="text-xl font-medium mb-2 inline-block text-white">Enter Your Email :- </label>
-                        <input type="text" placeholder="Enter Your Email" className="inline-block w-full pr-6 border-white border-b-2 py-2 ps-4 text-lg outline-none bg-transparent " name="email" onChange={(e) => getInputValue(e)} /><br /><br />
-                        <label className="text-xl font-medium mb-2 inline-block text-white">Enter Your Password :- </label>
-                        <input type="text" placeholder=" Enter Your Password" className="inline-block w-full pr-6 border-white border-b-2 py-2 ps-4 text-lg outline-none bg-transparent " name="pass" onChange={(e) => getInputValue(e)} /> <br /><br />
-                        <button type="submit" className="bg-blue-600 text-white text-lg font-medium px-7 py-1 mt-8">Login</button>
+            <div className="linear-bg h-screen flex justify-center items-center">
+            <div className="max-w-4xl mx-auto px-4 border bg-white py-20 rounded-md">
+            <h2 className="text-center text-5xl font-semibold ">Login Form</h2>
+                <div className="flex justify-center px-16 mt-10">
+                    <form method="post" onSubmit={(e) => handleSubmit(e)} >
+                        <label className="text-xl font-medium mb-2 inline-block">Enter Your Username :- </label>
+                        <input type="text" placeholder="Enter Your Username" className="border-black inline-block w-full pr-6 border-b-2 py-2 ps-4 text-lg outline-none bg-transparent " name="username" onChange={(e) => getInputValue(e)} /><br /><br />
+                        <label className="text-xl font-medium mb-2 inline-block">Enter Your Email :- </label>
+                        <input type="text" placeholder="Enter Your Email" className="border-black inline-block w-full pr-6 border-b-2 py-2 ps-4 text-lg outline-none bg-transparent " name="email" onChange={(e) => getInputValue(e)} /><br /><br />
+                        <label className="text-xl font-medium mb-2 inline-block">Enter Your Password :- </label>
+                        <input type="text" placeholder=" Enter Your Password" className="border-black inline-block w-full pr-6 border-b-2 py-2 ps-4 text-lg outline-none bg-transparent " name="pass" onChange={(e) => getInputValue(e)} /> <br /><br />
+                        <button type="submit" className="linear-bg w-full text-white text-2xl font-semibold px-7 py-3 mt-8 rounded-md">Login</button>
                     </form>
                 </div>
             </div>

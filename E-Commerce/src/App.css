@@ -37,5 +37,6 @@ header form input {
     background: linear-gradient(150deg,#9967ee,#5aa3f4);
 }
 ::placeholder{
-    color: white !important;
+    color: #45474B !important;
+    font-weight: 500;
 }
